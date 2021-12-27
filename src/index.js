@@ -4,10 +4,14 @@ import './index.css';
 import './utils/request'
 import 'antd/dist/antd.css'
 import App from './App';
+// 导入 Provider 让redux数据共享每个组件
+import {Provider} from 'react-redux'
+import store from './store'
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>
+  ,
   document.getElementById('root')
 );
 
