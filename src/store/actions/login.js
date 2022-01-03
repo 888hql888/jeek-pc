@@ -25,6 +25,7 @@ export const login = (data) => {
 //登出
 export const logout = ()=>{
     return dispatch => {
+        removeToken()
         dispatch({
             type:LOGOUT
         })
