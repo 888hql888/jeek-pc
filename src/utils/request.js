@@ -1,4 +1,5 @@
 import { message } from 'antd'
+import { hasToken,getToken } from './token'
 import axios from 'axios'
 // import { getToken, hasToken, removeToken } from 'utils/storage'
 // import history from 'utils/history'
@@ -13,9 +14,9 @@ const instance = axios.create({
 instance.interceptors.request.use(
   function (config) {
     // 在发送请求之前做些什么
-    // if (hasToken()) {
-    //   config.headers.Authorization = `Bearer ${getToken()}`
-    // }
+    if (hasToken()) {
+      config.headers.Authorization = `Bearer ${getToken()}`
+    }
     return config
   },
   function (error) {

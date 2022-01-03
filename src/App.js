@@ -9,8 +9,8 @@ function App() {
        <Router>
           <Switch>
             <Route path="/login" component={Login}/>
-            <Route path="/layout" component={Layout}/>
-            <Redirect from='/' to='/layout' exact></Redirect>
+            <Route path="/home" component={Layout}/>
+            <Redirect from='/' to='/login' exact></Redirect>
             <Route path="" component={NotFound}/>
           </Switch>
        </Router>

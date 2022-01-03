@@ -1,0 +1,18 @@
+.loginWraper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    .logincard{
+        width: 400px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0,50%);
+        .logoImg{
+            width:200px;
+            height:60px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
