@@ -35,7 +35,7 @@ export default function MyLayout() {
   };
   return (
     <div className={styles.root}>
-      <Layout>
+      <Layout style={{overflow:'auto'}}>
         <Header className="header">
           <div className="logo" />
           <div className="profile">

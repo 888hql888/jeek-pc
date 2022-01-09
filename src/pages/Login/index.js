@@ -66,7 +66,7 @@ export default function Login() {
           </Form.Item>
 
           <Form.Item
-            name="remember"
+            name="agree"
             valuePropName="checked"
             labelCol={{
                 span: 4,

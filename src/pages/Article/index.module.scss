@@ -1,0 +1,8 @@
+.articleRoot{
+    overflow: auto;
+    :global{
+        .ant-card-head{
+            text-align: left;
+        }
+    }
+}

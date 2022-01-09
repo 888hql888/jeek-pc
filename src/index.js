@@ -6,9 +6,16 @@ import "antd/dist/antd.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./store";
+import { ConfigProvider } from 'antd'
+import 'moment/locale/zh-cn'
+import locale from 'antd/lib/locale/zh_CN'
 ReactDOM.render(
-  <Provider store={store}>
+  // configProvider为国际化组件
+  <ConfigProvider locale={locale}>
+     <Provider store={store}>
     <App />
-  </Provider>,
+  </Provider>
+  </ConfigProvider>
+,
   document.getElementById("root")
 );

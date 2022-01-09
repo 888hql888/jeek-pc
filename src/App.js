@@ -13,7 +13,7 @@ function App() {
           <Switch>
             <Route path="/login" component={Login}/>
             {/* <Route path="/home" component={Layout}/> */}
-            <PrivateRoute path='/home'>
+            <PrivateRoute path="/home">
               <Layout></Layout>
             </PrivateRoute>
             <Redirect from='/' to='/login' exact></Redirect>
