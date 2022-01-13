@@ -32,3 +32,16 @@ export const delArticle = (id) => {
     })
   }
 }
+//发表文章
+export const publishArticle = (draft,data) => {
+  return async () => {
+    await request({
+      method: 'post',
+      url: `/mp/articles`,
+      data,
+      params:{
+        draft
+      }
+    })
+  }
+}

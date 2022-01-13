@@ -8,9 +8,9 @@ export default function Channel(props) {
     const channelList = useGetChannel()
     return (
         // ps:!!!! 一定要将 props 组件包装好的value和onChange传递给Select组件，否则封装后的组件，选完值没办法传给form表单的onFinsh收集.
-        <Select style={{ width: 200 }} {...props}  allowClear>
+        <Select style={{ width: 200 }} {...props}  allowClear placeholder="请选择频道">
               {channelList.map((item) => (
-                <Option value={item.id} ke={item.id}>
+                <Option value={item.id} key={item.id}>
                   {item.name}
                 </Option>
               ))}

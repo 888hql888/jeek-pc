@@ -52,8 +52,8 @@ export default function Article() {
       //render 的参数 写 dataIndex的value，就可以拿对应列的值
       render(cover) {
         const {type,images} = cover
-        if(type!=0) return <Image src={images[0]}></Image>
-        else return <Image src={img}></Image>
+        if(type!=0) return <Image src={images[0]} width={120} height={120}></Image>
+        else return <Image src={img}  width={120} height={120}></Image>
       }
     },
     {
