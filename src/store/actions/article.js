@@ -35,13 +35,41 @@ export const delArticle = (id) => {
 //发表文章
 export const publishArticle = (draft,data) => {
   return async () => {
-    await request({
+    const res = await request({
       method: 'post',
       url: `/mp/articles`,
+      data,
+      //正常post请求是不会有params参数的，此接口由于有Query查询.
+      params:{
+        draft
+      }
+    })
+    return Promise.resolve(res)
+  }
+}
+
+//编辑文章
+export const editArticle = (draft,data,id) => {
+  return async () => {
+    const res = await request({
+      method: 'PUT',
+      url: `/mp/articles/${id}`,
       data,
       params:{
         draft
       }
     })
+    return Promise.resolve(res)
+  }
+}
+
+//获取文章详情
+export const getArticle = (id) => {
+  return async () => {
+    const res = await request({
+      method: 'get',
+      url: `/mp/articles/${id}`
+    })
+    return Promise.resolve(res)
   }
 }
