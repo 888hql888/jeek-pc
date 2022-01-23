@@ -9,7 +9,12 @@ import rootReducer from './reducers'
 
 import { getToken } from '@/utils/token'
 // 整合中间件
-const middles = composeWithDevTools(applyMiddleware(thunk))
+// const middles = composeWithDevTools(applyMiddleware(thunk))
+let middles // 优化 composeWithDevTools 工具（用于查看redux中的状态改变等操作.） 开发环境需要，生产环境并不需要!!!
+if(process.env.NODE_ENV==='development'){
+    middles = composeWithDevTools(applyMiddleware(thunk))
+}else middles = applyMiddleware(thunk)
+
 // 初始化模块参数
 const initValue = {
     login:{
